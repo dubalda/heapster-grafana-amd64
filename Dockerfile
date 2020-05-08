@@ -1,6 +1,6 @@
 FROM k8s.gcr.io/heapster-grafana-amd64:v4.4.3
 
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y ca-certificates && \
-    grafana-cli plugins install devopsprodigy-kubegraf-app && \
-    rm -rf /var/lib/apt/lists/*
+COPY devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip /var/lib/grafana/plugins
+
+RUN cp /var/lib/grafana/plugins/ && \
+    bunzip2 devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip
