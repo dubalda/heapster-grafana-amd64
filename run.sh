@@ -12,7 +12,6 @@ if [ ! -f /etc/grafana/grafana.ini ]; then
         touch /etc/grafana/grafana.ini
 fi
 
-unzip devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip
 mkdir -p /var/lib/grafana/plugins
 unzip -q devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip -d /var/lib/grafana/plugins/
 
