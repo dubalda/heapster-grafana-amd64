@@ -12,10 +12,10 @@ if [ ! -f /etc/grafana/grafana.ini ]; then
         touch /etc/grafana/grafana.ini
 fi
 
-#mkdir -p /var/lib/grafana/plugins
-#unzip -qn devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip -d /var/lib/grafana/plugins/
-mkdir -p /usr/share/grafana/data/plugins
-unzip -qn devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip -d /usr/share/grafana/data/plugins/
+mkdir -p /var/lib/grafana/plugins
+unzip -q devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip -d /var/lib/grafana/plugins/
+unzip -q grafana-piechart-panel-v1.5.0-0-g3234d63.zip -d /var/lib/grafana/plugins/
+ls /var/lib/grafana/plugins/
 
 echo "Starting Grafana in foreground mode"
 exec /usr/sbin/grafana-server \
