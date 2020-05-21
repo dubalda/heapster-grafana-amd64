@@ -15,7 +15,12 @@ fi
 mkdir -p /var/lib/grafana/plugins
 unzip -q devopsprodigy-kubegraf-v1.3.0-0-g6617875.zip -d /var/lib/grafana/plugins/
 unzip -q grafana-piechart-panel-v1.5.0-0-g3234d63.zip -d /var/lib/grafana/plugins/
+
+mkdir -p /usr/share/grafana/data/plugins
+cp -r /var/lib/grafana/plugins/* /usr/share/grafana/data/plugins/
+
 ls /var/lib/grafana/plugins/
+ls /usr/share/grafana/data/plugins/
 
 echo "Starting Grafana in foreground mode"
 exec /usr/sbin/grafana-server \
